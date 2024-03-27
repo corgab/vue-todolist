@@ -12,10 +12,13 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
+    <div>
+        <input type="text" placeholder="scrivi qua" id="text">
+        <button @click="addArray()">aggiungi</button>
+    </div>
     <ul>
-        <li :class="isItemTrue() removeTodo()">ciao<span @click="removeTodo">{{x}}</span></li>
-        <li></li>
-        <li></li>
+        <!-- <li :class="item.done == true ? 'testostorto':''">ciao<span @click="removeTodo">x</span></li> -->
+        <li v-for="itemStamp,i in items" @click="removeTodo(0, itemStamp)">{{itemStamp.text}} x</li>
     </ul>
 </div>
 <script src="app.js"></script>

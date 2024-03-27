@@ -7,8 +7,20 @@ data() {
     return {
     message: 'Hello Vue!',
     item: { text: "ciao", done: true },
-    x: "x",
-    removeTodo: "d-none"
+    items: [
+        {
+            text:"ciao",
+            done: true
+        },
+        {
+            text:"nonciao",
+            done: false
+        },
+        {
+            text:"ciao",
+            done: true
+        },
+    ]
     }
 },
 methods: {
@@ -19,9 +31,20 @@ methods: {
         }
         return textStorto
     },
-
+    removeTodo() {
+        this.items.splice(0)
+    },
+    addArray() {
+        pushatore = { text: "", done: true}
+        const textEl = document.getElementById("text")
+        const textVal = textEl.value
+        pushatore.text = textVal
+        if(textVal !== "") {
+            this.items.push(pushatore)
+        }
+    }
 }
 }).mount('#app')
 
-//quando clicchi su x todo viene rimossa
+
 

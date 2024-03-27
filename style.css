@@ -1,3 +1,7 @@
 .testostorto {
     text-decoration: line-through;
 }
+
+.d-none {
+    display: none;
+}
